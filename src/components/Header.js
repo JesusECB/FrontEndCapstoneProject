@@ -1,7 +1,9 @@
+import React from 'react';
+
 function Header() {
   return (
     <header className="header">
-      <h1>Little Lemon</h1>
+      <h1 data-testid="header-title">Little Lemon</h1>
     </header>
   );
 }

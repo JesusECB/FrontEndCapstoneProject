@@ -2,9 +2,13 @@ import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Nav from './components/Nav';
+// eslint-disable-next-line
 import Hero from './components/Hero';
+// eslint-disable-next-line
 import Specials from './components/Specials';
+// eslint-disable-next-line
 import Testimonials from './components/Testimonials';
+// eslint-disable-next-line
 import About from './components/About';
 import Footer from './components/Footer';
 import BookingPage from './pages/BookingPage';
@@ -12,14 +16,17 @@ import HomePage from './pages/HomePage';
 
 function App() {
   return (
-    <Router>
+    <Router
+      future={{
+        v7_startTransition: true,
+        v7_relativeSplatPath: true,
+      }}
+    >
       <div className="App">
         <Header />
         <Nav />
         <Routes>
-          {/* Ruta para la página de inicio */}
           <Route path="/" element={<HomePage />} />
-          {/* Ruta para la página de reservas */}
           <Route path="/booking" element={<BookingPage />} />
         </Routes>
         <Footer />
