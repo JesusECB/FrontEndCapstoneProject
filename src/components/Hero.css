@@ -1,0 +1,99 @@
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #495E57; /* Fondo verde oscuro */
+    padding: 20px 40px; /* Reducimos el padding para que sea más compacto */
+    color: #fff;
+    min-height: 50vh; /* Reducimos la altura mínima */
+    max-height: 60vh; /* Limitar la altura máxima */
+  }
+  
+  .hero-content {
+    flex: 1;
+    padding-right: 20px;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .hero h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero button {
+    background-color: #F4CE14;
+    color: #495E57;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .hero button:hover {
+    background-color: #e6c94b;
+  }
+  
+  /* Ajustes para la imagen del Hero */
+  .hero-image {
+    flex: 1;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hero-image img {
+    width: 100%;
+    max-height: 400px; /* Limitamos la altura máxima de la imagen */
+    object-fit: cover; /* La imagen se recorta para ajustarse al contenedor */
+    border-radius: 16px;
+  }
+  
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #495E57;
+    padding: 80px 40px 40px; /* Añadimos un margen superior para evitar el solapamiento */
+    color: #fff;
+    min-height: 50vh;
+  }
+  
+  .hero-content {
+    flex: 1;
+  }
+  
+  .hero-image img {
+    max-width: 100%;
+    border-radius: 16px;
+    object-fit: cover;
+  }
+  
+  
+  .reserve-button {
+    background-color: #F4CE14;
+    color: #495E57;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* Asegura que no haya subrayado */
+  }
+  
+  .reserve-button:hover {
+    background-color: #e6c94b;
+  }
+  

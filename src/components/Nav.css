@@ -1,0 +1,54 @@
+/* Barra de Navegación */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #ffffff; /* Fondo blanco */
+    display: flex;
+    justify-content: center; /* Centra el contenido */
+    padding: 10px 20px;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav-container {
+    display: flex;
+    align-items: center;
+    gap: 40px; /* Espaciado entre logo y menú */
+  }
+  
+  .nav-logo img {
+    max-width: 100px;
+  }
+  
+  .nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .nav-menu li {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-menu a {
+    display: flex;
+    align-items: center;
+    color: #333333;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-menu a:hover {
+    color: #495E57;
+  }
+  
+  .nav-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+  }
+  

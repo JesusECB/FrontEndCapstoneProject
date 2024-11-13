@@ -1,18 +1,24 @@
+import { Link } from 'react-router-dom';
+import './Hero.css';
+
 function Hero() {
   return (
     <section className="hero">
       <div className="hero-content">
-        <h2>Little Lemon</h2>
-        <p>Chicago</p>
-        <p>Experience the best dishes prepared with love.</p>
-        <button>Reserve a Table</button>
+        <h1>Little Lemon Restaurant</h1>
+        <h3>Chicago</h3>
+        <p>
+          We are a family-owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.
+        </p>
+        <Link to="/booking">
+          <button className="reserve-button">Reserve a Table</button>
+        </Link>
       </div>
       <div className="hero-image">
-        <img src="/images/hero-image.jpg" alt="Little Lemon Restaurant" />
+        <img src="/icons_assets/restauranfood.jpg" alt="Restaurant Food" />
       </div>
     </section>
   );
 }
 
 export default Hero;
-

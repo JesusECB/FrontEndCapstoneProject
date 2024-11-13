@@ -1,21 +1,18 @@
-function Main() {
+import './Hero.css';
+
+function Hero() {
   return (
-    <main className="main-container">
-      <div className="section">
-        <h2>Reserve a Table</h2>
-        <p>Book your table in advance and enjoy a delightful experience at Little Lemon!</p>
+    <section className="hero">
+      <div className="hero-content">
+        <h1>Welcome to Little Lemon</h1>
+        <p>Experience the best dishes in Chicago</p>
+        <button>Reserve a Table</button>
       </div>
-      <div className="section">
-        <h2>Our Menu</h2>
-        <p>Explore our delicious menu, freshly prepared daily with the finest ingredients.</p>
+      <div className="hero-image">
+        <img src="/icons_assets/restauranfood.jpg" alt="Restaurant Food" />
       </div>
-      <div className="section">
-        <h2>Contact Us</h2>
-        <p>Get in touch with us for reservations, inquiries, and special events.</p>
-      </div>
-    </main>
+    </section>
   );
 }
 
-export default Main;
-
+export default Hero;
