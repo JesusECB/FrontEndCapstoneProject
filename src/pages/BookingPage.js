@@ -19,22 +19,15 @@ const updateTimes = (state, action) => {
 };
 
 function BookingPage() {
+  // eslint-disable-next-line no-unused-vars
   const [availableTimes, dispatch] = useReducer(updateTimes, [], initializeTimes);
   const navigate = useNavigate();
 
   const submitForm = (formData) => {
-    console.log('Submitting form data:', formData);
     const isSuccess = submitAPI(formData);
-
     if (isSuccess) {
-      // Guardar la reserva en localStorage
       saveReservationToLocalStorage(formData);
-      console.log('Reservation saved to localStorage:', formData);
-      
-      // Redirigir a la página de confirmación
       navigate('/confirmation');
-    } else {
-      alert('Error: Unable to confirm the booking.');
     }
   };
 
@@ -43,10 +36,10 @@ function BookingPage() {
       <header>
         <h1>Reserve Your Table</h1>
       </header>
-      <section className="booking-form-container">
+      <section className="booking-form-container" aria-labelledby="booking-form-heading">
+        <h2 id="booking-form-heading">Fill out the form below to reserve your table</h2>
         <BookingForm
           availableTimes={availableTimes}
-          dispatch={dispatch}
           handleReservation={submitForm}
         />
       </section>
