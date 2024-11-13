@@ -1,12 +1,18 @@
 import React, { useReducer } from 'react';
 import BookingForm from '../components/BookingForm';
+import { fetchAPI, submitAPI, saveReservationToLocalStorage } from '../api';
+import { useNavigate } from 'react-router-dom';
 import './BookingPage.css';
 
-const initializeTimes = () => ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
+const initializeTimes = () => {
+  const today = new Date();
+  return fetchAPI(today);
+};
+
 const updateTimes = (state, action) => {
   switch (action.type) {
     case 'UPDATE_TIMES':
-      return initializeTimes();
+      return fetchAPI(action.payload);
     default:
       return state;
   }
@@ -14,21 +20,34 @@ const updateTimes = (state, action) => {
 
 function BookingPage() {
   const [availableTimes, dispatch] = useReducer(updateTimes, [], initializeTimes);
+  const navigate = useNavigate();
 
-  const handleReservation = (reservationTime) => {
-    console.log('Reservation made for:', reservationTime);
+  const submitForm = (formData) => {
+    console.log('Submitting form data:', formData);
+    const isSuccess = submitAPI(formData);
+
+    if (isSuccess) {
+      // Guardar la reserva en localStorage
+      saveReservationToLocalStorage(formData);
+      console.log('Reservation saved to localStorage:', formData);
+      
+      // Redirigir a la página de confirmación
+      navigate('/confirmation');
+    } else {
+      alert('Error: Unable to confirm the booking.');
+    }
   };
 
   return (
     <main className="booking-page">
       <header>
-        <h2>Reserve Your Table</h2>
+        <h1>Reserve Your Table</h1>
       </header>
-      <section>
+      <section className="booking-form-container">
         <BookingForm
           availableTimes={availableTimes}
           dispatch={dispatch}
-          handleReservation={handleReservation}
+          handleReservation={submitForm}
         />
       </section>
     </main>

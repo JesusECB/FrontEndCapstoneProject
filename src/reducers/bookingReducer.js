@@ -1,11 +1,17 @@
-// bookingReducer.js
+import { fetchAPI } from '../api';
 
-// Inicializa los horarios disponibles
+// Inicializa los horarios utilizando la API para la fecha actual
 export const initializeTimes = () => {
-    return ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
-  };
+  const today = new Date();
+  return fetchAPI(today);
+};
 
-  // Actualiza los horarios disponibles basado en la acción (por ahora solo retorna el estado actual)
-  export const updateTimes = (state, action) => {
-    return state;
-  };
+// Actualiza los horarios basados en la fecha seleccionada
+export const updateTimes = (state, action) => {
+  switch (action.type) {
+    case 'UPDATE_TIMES':
+      return fetchAPI(action.payload);
+    default:
+      return state;
+  }
+};
